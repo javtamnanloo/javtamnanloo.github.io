@@ -1,0 +1,135 @@
+cv:
+  name: Javad Tamnanloo
+  label: Ph.D. Candidate in Polymer Science
+  email: jav.tamnanloo@gmail.com
+  location: Akron, OH
+  image: ""
+  summary: Machine learning, molecular simulation, and quantum chemistry for polymers and polymer surfaces.
+
+  social_networks:
+    - network: LinkedIn
+      username: javtamnanloo
+    - network: GitHub
+      username: javtamnanloo
+
+  sections:
+    Education:
+      - institution: The University of Akron
+        location: Akron, OH
+        url: https://www.uakron.edu/polymer/
+        area: Polymer Science
+        studyType: Ph.D.
+        start_date: 2022
+        end_date: present
+        highlights:
+          - "Advisor: Prof. Mesfin Tsige"
+          - "Expected completion: 2027"
+          - Computational Data Science Certificate
+
+      - institution: University of Tehran
+        location: Tehran, Iran
+        area: Chemical Engineering
+        studyType: M.S.
+        start_date: 2012
+        end_date: 2015
+
+      - institution: University of Tehran
+        location: Tehran, Iran
+        area: Chemical Engineering
+        studyType: B.S.
+        start_date: 2008
+        end_date: 2012
+
+    Experience:
+      - company: Bridgestone Americas, Inc.
+        position: Data Science Intern, Material Digitization Group
+        location: Akron, OH
+        start_date: 2026
+        end_date: 2026
+        highlights:
+          - Improved the group's production machine learning model for tire-compound properties through data cleaning, pre- and post-processing, and hyperparameter tuning.
+          - Prototyped similarity tools for exploring the design space the models cover.
+
+      - company: Handshake AI Fellowship
+        position: AI Trainer (part-time contract)
+        location: Remote
+        start_date: 2026
+        end_date: present
+        highlights:
+          - Design expert science questions that test and improve AI models.
+
+      - company: The University of Akron, Tsige Lab
+        position: Graduate Researcher
+        location: Akron, OH
+        start_date: 2022
+        end_date: present
+        highlights:
+          - Graph neural networks and descriptor-based models for the surface tension of polymers and liquids.
+          - All-atom molecular dynamics of polymer chains, films, and interfaces with experimental collaborators.
+          - Multireference ab initio dynamics of force-driven reactions.
+          - Machine learning for the immune response of biomaterials.
+
+      - company: The University of Akron, Department of Physics
+        position: Graduate Teaching Assistant
+        location: Akron, OH
+        start_date: 2022
+        end_date: 2024
+        highlights:
+          - Taught undergraduate physics laboratory sections.
+
+      - company: NanoAlvand Pharmaceutical Co.
+        position: Technology Development Engineer
+        location: Tehran, Iran
+        start_date: 2018
+        end_date: 2020
+        highlights:
+          - Transferred sterile injectable manufacturing processes from research and development to production.
+
+      - company: University of Tehran, Adsorption and Nanomaterials Laboratory
+        position: Graduate Researcher
+        location: Tehran, Iran
+        start_date: 2012
+        end_date: 2017
+        highlights:
+          - Adsorption-based gas separation, from materials synthesis and measurements to process modeling.
+
+    Awards:
+      - title: Irja and Aleksander Piirma Fellowship in Polymer Science
+        date: 2025-09-01
+        awarder: The University of Akron
+
+      - title: NSF NRT Fellow, Graduate Traineeship on Advances in Material Sciences Using Machine Learning
+        date: 2024-05-01
+        awarder: National Science Foundation
+
+      - title: Householder Award for outstanding contributions as a Graduate Teaching Assistant
+        date: 2024-05-01
+        awarder: Department of Physics, The University of Akron
+
+      - title: Professor Ronald K. Eby Award for academic excellence
+        date: 2023-05-01
+        awarder: School of Polymer Science and Polymer Engineering, The University of Akron
+
+      - title: First-Class Honors, M.S. and B.S. in Chemical Engineering
+        date: 2015-09-01
+        awarder: University of Tehran
+
+    Skills:
+      - name: Machine learning
+        icon: fa-solid fa-hashtag
+        keywords: "PyTorch, PyTorch Geometric, scikit-learn, graph neural networks"
+
+      - name: Molecular simulation
+        icon: fa-solid fa-hashtag
+        keywords: "LAMMPS, OpenMolcas, molecular dynamics, multireference methods"
+
+      - name: Cheminformatics and data
+        icon: fa-solid fa-hashtag
+        keywords: "RDKit, Mordred, Python, SQL"
+
+    Languages:
+      - name: English
+        summary: "Fluent"
+
+      - name: Persian
+        summary: "Native"
