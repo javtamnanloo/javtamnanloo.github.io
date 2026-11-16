@@ -1,0 +1,51 @@
+name: Keep predictor awake
+
+on:
+  schedule:
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  visit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: |
+          pip install playwright==1.56.0
+          playwright install --with-deps chromium
+      - name: Visit the app
+        shell: python
+        run: |
+          import asyncio
+          from playwright.async_api import async_playwright
+
+          URL = "https://surface-tension-predictor.streamlit.app/"
+
+          async def main():
+              async with async_playwright() as p:
+                  browser = await p.chromium.launch()
+                  page = await browser.new_page()
+                  await page.goto(URL, wait_until="load", timeout=120000)
+                  for _ in range(60):
+                      wake = page.get_by_role("button", name="Yes, get this app back up!")
+                      if await wake.count():
+                          print("App was asleep; waking it")
+                          await wake.click()
+                      for frame in page.frames:
+                          try:
+                              if await frame.locator("button:has-text('Predict')").count():
+                                  print("App is awake")
+                                  await page.wait_for_timeout(5000)
+                                  await browser.close()
+                                  return
+                          except Exception:
+                              pass
+                      await page.wait_for_timeout(5000)
+                  raise SystemExit("The app did not come up within 5 minutes")
+
+          asyncio.run(main())
