@@ -1,0 +1,11 @@
+- key: machine learning
+  title: Machine learning
+  intro: Models that predict how a polymer or a liquid behaves from its chemical structure, built for the small datasets that are common in polymer science.
+
+- key: molecular dynamics
+  title: Molecular dynamics
+  intro: Atom-by-atom simulations of polymer chains, films, and solvents, often run side by side with experiments.
+
+- key: quantum chemistry
+  title: Quantum chemistry
+  intro: DFT and multireference methods for chemistry in which bonds break and form, including reactions driven by mechanical force.

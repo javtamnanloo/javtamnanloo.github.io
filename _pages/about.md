@@ -2,18 +2,23 @@
 layout: about
 title: about
 permalink: /
-subtitle: Ph.D. Candidate, <a href='https://www.uakron.edu/polymer/'>School of Polymer Science and Polymer Engineering</a>, The University of Akron, Akron, OH
+subtitle: Ph.D. Candidate, <a href='https://www.uakron.edu/polymer/'>School of Polymer Science and Polymer Engineering</a>, <a href='https://www.uakron.edu/'>The University of Akron</a>, Akron, OH
 
 profile:
   align: right
-  image: prof_pic.jpg
+  image: prof_pic.gif
 
 selected_papers: true
 social: true
 ---
 
-I am a Ph.D. candidate in the School of Polymer Science and Polymer Engineering at the University of Akron, where I work with Prof. Mesfin Tsige. My research combines machine learning, molecular simulation, and quantum chemistry to understand and predict how polymers behave, with a particular interest in polymer surfaces.
+I use computational methods to understand and design materials, working with Prof. Mesfin Tsige at the [University of Akron](https://www.uakron.edu/). My toolkit combines machine learning, including graph neural networks, with molecular dynamics, density functional theory, and multireference quantum chemistry. Together they connect a material's chemical structure to how it behaves, from the way molecules pack and move in polymers, at surfaces, and in solution to how chemical bonds break and form under heat and mechanical force.
 
-My work includes graph neural networks that predict the surface tension of polymers and liquids, all-atom molecular dynamics of polymer chains and films, and multireference quantum chemistry of force-driven reactions. I collaborate closely with experimental groups, and I am an NSF NRT fellow in a graduate traineeship on machine learning for materials science. You can try one of my models with the [surface tension predictor]({{ '/predictor/' | relative_url }}) on this site.
+I work closely with experimental groups, using simulations and machine learning to explain their measurements and to guide which materials to make next. I am an NSF NRT fellow in a graduate traineeship on machine learning for materials science. Selected projects, several with simulation movies, are on my [research]({{ '/research/' | relative_url }}) page, and you can try one of my machine learning models with the [surface tension predictor]({{ '/predictor/' | relative_url }}).
 
-Before coming to Akron, I earned my B.S. and M.S. in chemical engineering at the University of Tehran, where I worked on gas adsorption and separation, and then worked as a technology development engineer in pharmaceutical manufacturing. I am currently a data science intern at Bridgestone Americas.
+Before coming to Akron, I earned my B.S. and M.S. in chemical engineering at the [University of Tehran](https://ut.ac.ir/en), where I worked on gas adsorption and separation, and then worked as a technology development engineer in pharmaceutical manufacturing. I am currently a data science intern at [Bridgestone Americas](https://www.bridgestoneamericas.com/).
+
+<style>
+  /* selected publications on this page: the linked title is enough, no DOI/Bib/HTML buttons */
+  .publications .links { display: none; }
+</style>
