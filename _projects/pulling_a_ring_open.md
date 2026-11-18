@@ -22,8 +22,8 @@ Most chemical reactions are started with heat or light. Mechanochemistry uses fo
 The ring studied here is gem-difluorocyclopropane (gDFC): a triangle of three carbon atoms with two fluorine atoms on one corner. In 2010, Lenhardt and coworkers built these rings into polybutadiene and showed that pulling on the polymer opens them into a 1,3-diradical, a molecule with two unpaired electrons. Normally this structure is the transition state of the ring's isomerization and lasts for a single molecular vibration, but the pull holds it open: the transition state is trapped by tension [[1]](#ref-1). In 2015, Wang and coworkers asked what the ring does once the force is released [[2]](#ref-2). The simulations below follow both steps atom by atom, with the electrons treated by quantum mechanics.
 
 <figure class="story">
-  <img class="only-light" data-zoomable src="{{ '/assets/img/gdfc/story_light.jpg' | relative_url }}" alt="A gem-difluorocyclopropane ring is pulled open into a diradical. When the force is released, it almost always closes with both handles on the same side, and rarely with them on opposite sides">
-  <img class="only-dark" data-zoomable src="{{ '/assets/img/gdfc/story_dark.jpg' | relative_url }}" alt="A gem-difluorocyclopropane ring is pulled open into a diradical. When the force is released, it almost always closes with both handles on the same side, and rarely with them on opposite sides">
+  <img class="only-light" data-zoomable src="{{ '/assets/img/gdfc/story_light.jpg' | relative_url }}" alt="A gem-difluorocyclopropane ring is pulled open into a diradical. When the force is released, its two ends almost always twist in opposite directions and the ring closes back into its starting form. Rarely, both ends twist the same way and one orange hydrogen ends up flipped over">
+  <img class="only-dark" data-zoomable src="{{ '/assets/img/gdfc/story_dark.jpg' | relative_url }}" alt="A gem-difluorocyclopropane ring is pulled open into a diradical. When the force is released, its two ends almost always twist in opposite directions and the ring closes back into its starting form. Rarely, both ends twist the same way and one orange hydrogen ends up flipped over">
 </figure>
 
 ## Why the fluorines matter
@@ -38,49 +38,36 @@ In each movie:
 
 - **Left chart:** the length of the breaking bond. An intact carbon–carbon bond is about 1.5 Å long.
 - **Right chart:** how that bond's two electrons are shared between its bonding and antibonding orbitals. An intact bond keeps both in the bonding orbital (about 2 and 0). As the bond breaks, the electrons split up, one in each orbital (about 1 and 1): the diradical.
-- **The stick for the breaking bond** is drawn from those same numbers, so it thins and disappears as the bond breaks and grows back as it forms. A dashed line keeps showing the distance once the bond is gone.
+- **The stick for the breaking bond** is drawn from those same numbers, so it thins and disappears as the bond breaks and grows back as it forms. A faint dotted line keeps showing the distance once the bond is gone.
 - **Time:** one second of video is 30 femtoseconds (3 × 10⁻¹⁴ s) of the simulation.
+- **Motion:** the atom positions are smoothed over a few femtoseconds to calm the fastest hydrogen vibrations, so the slower twisting is easier to follow. The charts show the unsmoothed data.
 
 ## Pulling the ring open
 
 <figure class="clip">
-  <video data-light="{{ '/assets/video/gdfc/open_cis_light.mp4' | relative_url }}" data-dark="{{ '/assets/video/gdfc/open_cis_dark.mp4' | relative_url }}" data-poster-light="{{ '/assets/img/gdfc/open_cis_light.jpg' | relative_url }}" data-poster-dark="{{ '/assets/img/gdfc/open_cis_dark.jpg' | relative_url }}" muted loop playsinline controls preload="none" aria-label="Ab initio dynamics of gem-difluorocyclopropane pulled at 2 nN on two hydrogens on the same side of the ring: the bond breaks and its two ends twist in opposite directions"></video>
-  <figcaption><strong>Handles on the same side of the ring, 2 nN each.</strong> The two ends of the breaking bond twist in opposite directions as the ring opens.</figcaption>
+  <video data-light="{{ '/assets/video/gdfc/open_cis_light.mp4' | relative_url }}" data-dark="{{ '/assets/video/gdfc/open_cis_dark.mp4' | relative_url }}" data-poster-light="{{ '/assets/img/gdfc/open_cis_light.jpg' | relative_url }}" data-poster-dark="{{ '/assets/img/gdfc/open_cis_dark.jpg' | relative_url }}" muted loop playsinline controls preload="none" aria-label="Ab initio dynamics of gem-difluorocyclopropane pulled at 2 nN on two hydrogens: the bond breaks and its two ends twist in opposite directions"></video>
+  <figcaption><strong>Pulled open, 2 nN on each orange hydrogen.</strong> The two ends of the breaking bond twist in opposite directions as the ring opens.</figcaption>
 </figure>
 
-When the two orange hydrogens sit on the same side of the ring (cis), pulling them apart makes the two ends of the breaking bond, each a carbon carrying two hydrogens, twist in opposite directions, one clockwise and one counterclockwise (a disrotatory opening). That is the path the orbital-symmetry (Woodward–Hoffmann) rules allow when this ring is simply heated, and it is the path these simulations always take.
-
-<figure class="clip">
-  <video data-light="{{ '/assets/video/gdfc/open_trans_light.mp4' | relative_url }}" data-dark="{{ '/assets/video/gdfc/open_trans_dark.mp4' | relative_url }}" data-poster-light="{{ '/assets/img/gdfc/open_trans_light.jpg' | relative_url }}" data-poster-dark="{{ '/assets/img/gdfc/open_trans_dark.jpg' | relative_url }}" muted loop playsinline controls preload="none" aria-label="Ab initio dynamics of gem-difluorocyclopropane pulled at 3 nN on two hydrogens on opposite sides of the ring: both ends of the breaking bond twist the same way"></video>
-  <figcaption><strong>Handles on opposite sides, 3 nN each.</strong> Both ends of the breaking bond twist the same way as the ring opens.</figcaption>
-</figure>
-
-When the orange hydrogens sit on opposite sides (trans), the pull twists both ends the same way, like two wheels turning together (a conrotatory opening), a motion the same rules disfavor for a heated ring. The force overrides that preference, though it takes a harder pull: 3 nN here instead of 2 nN. With the force on, the open diradical stays open: the pull has turned a fleeting transition state into a stable structure.
+Pulling the two orange hydrogens apart stretches the bond opposite the fluorine corner until it breaks, here after about 190 femtoseconds. As it gives way, the two ends of the bond, each a carbon carrying two hydrogens, twist in opposite directions, one clockwise and one counterclockwise (a disrotatory opening). With the force on, the open diradical stays open: the pull has turned a fleeting transition state into a stable structure.
 
 ## Letting go
 
 In the experiment the force lasts only as long as a bubble collapse. Once it is gone, the diradical is a transition state again, and the ring snaps shut, usually within about 100 femtoseconds.
 
 <figure class="clip">
-  <video data-light="{{ '/assets/video/gdfc/close_dis_light.mp4' | relative_url }}" data-dark="{{ '/assets/video/gdfc/close_dis_dark.mp4' | relative_url }}" data-poster-light="{{ '/assets/img/gdfc/close_dis_light.jpg' | relative_url }}" data-poster-dark="{{ '/assets/img/gdfc/close_dis_dark.jpg' | relative_url }}" muted loop playsinline controls preload="none" aria-label="Ab initio dynamics after the force is released: the two ends twist in opposite directions as the ring closes, and both orange hydrogens end up on the same side"></video>
-  <figcaption><strong>Force released: the usual closing.</strong> The two ends twist in opposite directions and both handles end up on the same side.</figcaption>
+  <video data-light="{{ '/assets/video/gdfc/close_dis_light.mp4' | relative_url }}" data-dark="{{ '/assets/video/gdfc/close_dis_dark.mp4' | relative_url }}" data-poster-light="{{ '/assets/img/gdfc/close_dis_light.jpg' | relative_url }}" data-poster-dark="{{ '/assets/img/gdfc/close_dis_dark.jpg' | relative_url }}" muted loop playsinline controls preload="none" aria-label="Ab initio dynamics after the force is released: the two ends twist in opposite directions and the ring closes back into its starting form"></video>
+  <figcaption><strong>Force released: the usual closing.</strong> The two ends twist in opposite directions, and the ring closes back into its starting form.</figcaption>
 </figure>
 
-By far the more likely outcome is that the two ends twist in opposite directions as the ring closes (disrotatory), leaving both handles on the same side: the cis ring. That is why pulling on a polymer full of trans rings converts many of them into the less stable cis form, and why the polymer ends up slightly shorter after it has been stretched [[1]](#ref-1).
+By far the more likely outcome is that the two ends twist in opposite directions again (disrotatory), and the ring closes back into the form it started from.
 
 <figure class="clip">
-  <video data-light="{{ '/assets/video/gdfc/close_con_light.mp4' | relative_url }}" data-dark="{{ '/assets/video/gdfc/close_con_dark.mp4' | relative_url }}" data-poster-light="{{ '/assets/img/gdfc/close_con_light.jpg' | relative_url }}" data-poster-dark="{{ '/assets/img/gdfc/close_con_dark.jpg' | relative_url }}" muted loop playsinline controls preload="none" aria-label="Ab initio dynamics after the force is released: the diradical lingers, then both ends twist the same way as the ring closes, leaving the orange hydrogens on opposite sides"></video>
-  <figcaption><strong>Force released: the rare closing.</strong> Both ends twist the same way and the handles end up on opposite sides.</figcaption>
+  <video data-light="{{ '/assets/video/gdfc/close_con_light.mp4' | relative_url }}" data-dark="{{ '/assets/video/gdfc/close_con_dark.mp4' | relative_url }}" data-poster-light="{{ '/assets/img/gdfc/close_con_light.jpg' | relative_url }}" data-poster-dark="{{ '/assets/img/gdfc/close_con_dark.jpg' | relative_url }}" muted loop playsinline controls preload="none" aria-label="Ab initio dynamics after the force is released: the diradical lingers, then both ends twist the same way as the ring closes, leaving one orange hydrogen flipped over"></video>
+  <figcaption><strong>Force released: the rare closing.</strong> Both ends twist the same way, and the ring closes with one orange hydrogen flipped over.</figcaption>
 </figure>
 
-Much less often, both ends twist the same way and the ring closes conrotatory, giving the trans ring. In this run the diradical lingers for about 200 femtoseconds before it finds that exit.
-
-<figure class="clip">
-  <video data-light="{{ '/assets/video/gdfc/close_reopen_light.mp4' | relative_url }}" data-dark="{{ '/assets/video/gdfc/close_reopen_dark.mp4' | relative_url }}" data-poster-light="{{ '/assets/img/gdfc/close_reopen_light.jpg' | relative_url }}" data-poster-dark="{{ '/assets/img/gdfc/close_reopen_dark.jpg' | relative_url }}" muted loop playsinline controls preload="none" aria-label="Ab initio dynamics after the force is released: the ring closes, opens again, and closes a second time with the orange hydrogens on opposite sides"></video>
-  <figcaption><strong>A ring that changes its mind.</strong> It closes with the handles on the same side, breaks open again, then closes the other way.</figcaption>
-</figure>
-
-The energy released as the ring closes stays in the molecule as vibration, because nothing in these simulations carries it away. In this run the ring closes with both handles on the same side, breaks open again about 140 femtoseconds later, and then closes the other way, with the handles on opposite sides. In a polymer in solution, the chain and the solvent would carry some of that energy away.
+Much less often, both ends twist the same way (conrotatory), and the ring closes into a slightly different form, with one orange hydrogen flipped over. In this run the diradical lingers for about 200 femtoseconds before it finds that exit.
 
 ## Why it matters
 
