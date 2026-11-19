@@ -50,14 +50,6 @@ cv:
           - Improved the group's production machine learning model for tire-compound properties through data cleaning, pre- and post-processing, and hyperparameter tuning.
           - Prototyped similarity tools for exploring the design space the models cover.
 
-      - company: Handshake AI Fellowship
-        position: AI Trainer (part-time contract)
-        location: Remote
-        start_date: 2026
-        end_date: present
-        highlights:
-          - Design expert science questions that test and improve AI models.
-
       - company: The University of Akron, Tsige Lab
         position: Graduate Researcher
         location: Akron, OH
