@@ -27,7 +27,7 @@ A polymer is a very long molecule made by linking many small units, called monom
   <figcaption>Four pieces of polymer pulled from both ends at the same speed. Each colour is one chain.</figcaption>
 </figure>
 
-Each strip is a computer simulation of a small piece of polymer melt, built from bead-and-spring chains, a soft material with no crosslinks between its chains, much like Silly Putty. All four are pulled at the same speed, and the only difference is the length of the chains, from 20 to 200 units. Short chains barely tangle, so they slide past each other and the sample tears apart early. Longer chains are more entangled: they have to slide and straighten out before the sample can come apart, so it draws out into long fibers first. This is one reason longer chains make tougher plastics.
+Each strip is a computer simulation of a small piece of polymer melt, built from bead-and-spring chains, a soft material with no crosslinks between its chains, much like Silly Putty. All four are pulled at the same speed, and the only difference is the length of the chains, from 20 to 200 units. Short chains barely tangle, so they slide past each other and the sample tears apart early. Longer chains are more entangled: they have to slide and straighten out before the sample can come apart, so it draws out into long fibers first. The piece with 20-unit chains holds together only until it is about 4 times its starting length, while the piece with 200-unit chains lasts until about 11 times. This is one reason longer chains make tougher plastics.
 
 ## Pull slowly and it stretches, pull fast and it snaps
 
@@ -36,7 +36,7 @@ Each strip is a computer simulation of a small piece of polymer melt, built from
   <figcaption>The same 200-unit chains pulled at three speeds, played on the same clock, so the faster pulls really move five and ten times faster.</figcaption>
 </figure>
 
-All three pieces start together. Pulled five or ten times faster, the chains have no time to adapt: the sample narrows, snaps, and some chains break, all while the slowly pulled piece has barely started to stretch. Pulled slowly, the chains have time to slide past each other and line up along the pulling direction, so the sample keeps stretching into a long fiber. You can feel the same thing with Silly Putty: pull it slowly and it stretches, yank it and it breaks.
+All three pieces start together. Pulled five or ten times faster, the chains have no time to adapt: the sample narrows and snaps after stretching to only about 4 to 5 times its starting length, and some chains break, all while the slowly pulled piece has barely started to stretch. Pulled slowly, the chains have time to slide past each other and line up along the pulling direction, so the sample keeps stretching into a long fiber and holds together until about 11 times its starting length. You can feel the same thing with Silly Putty: pull it slowly and it stretches, yank it and it breaks.
 
 ## Polymer Explorers at the library
 
