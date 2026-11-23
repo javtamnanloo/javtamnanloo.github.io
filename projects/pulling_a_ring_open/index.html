@@ -1,0 +1,208 @@
+<!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> Pulling a molecular ring open | Javad Tamnanloo </title> <meta name="author" content="Javad Tamnanloo"> <meta name="description" content="Quantum-chemistry simulations of a strained carbon ring torn open by force, and of what it does when the force lets go."> <meta name="keywords" content="polymer science, machine learning, graph neural networks, molecular dynamics, surface tension"> <meta property="og:site_name" content="Javad Tamnanloo"> <meta property="og:type" content="website"> <meta property="og:title" content="Javad Tamnanloo | Pulling a molecular ring open"> <meta property="og:url" content="https://javtamnanloo.github.io/projects/pulling_a_ring_open/"> <meta property="og:description" content="Quantum-chemistry simulations of a strained carbon ring torn open by force, and of what it does when the force lets go."> <meta property="og:locale" content="en"> <meta name="twitter:card" content="summary"> <meta name="twitter:title" content="Pulling a molecular ring open"> <meta name="twitter:description" content="Quantum-chemistry simulations of a strained carbon ring torn open by force, and of what it does when the force lets go."> <script type="application/ld+json">
+    {
+        "author":
+        {
+            "@type": "Person",
+            "name": "Javad Tamnanloo"
+        },
+        "url": "https://javtamnanloo.github.io/projects/pulling_a_ring_open/",
+        "@type": "WebSite",
+        "description": "Quantum-chemistry simulations of a strained carbon ring torn open by force, and of what it does when the force lets go.",
+        "headline": "Pulling a molecular ring open",
+        
+        "sameAs": ["https://www.linkedin.com/in/javtamnanloo","https://scholar.google.com/citations?user=OTb5E1cAAAAJ","https://github.com/javtamnanloo"],
+        
+        "name": "Javad Tamnanloo",
+        "@context": "https://schema.org"
+    }
+  </script> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <style>
+  :root {
+    --max-content-width: 930px;
+  }
+</style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%E2%9A%9B%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;"> <link rel="stylesheet" href="/assets/css/main.css?v=3116ba77db9ee1581d05bb3e86fbf7f1"> <link rel="canonical" href="https://javtamnanloo.github.io/projects/pulling_a_ring_open/"> <script src="/assets/js/theme.js?v=f74df2af7fa0e97a93f4d6d2956bcd5f"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
+    initTheme();
+  </script> <link rel="stylesheet" href="/assets/al_email_protect/css/email-protect.css"> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> <span class="font-weight-bold">Javad</span> Tamnanloo </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item "> <a class="nav-link" href="/research/">research </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">publications </a> </li> <li class="nav-item "> <a class="nav-link" href="/predictor/">predictor </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/">CV </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <style type="text/css">
+    .clip { margin: 1.6rem 0 1.8rem; } .clip video { display: block; width: 100%; aspect-ratio: 16 / 9; border-radius: 6px; background: #ffffff; } html[data-theme="dark"] .clip video { background: #1c1c1d; } .clip figcaption { margin-top: 0.5rem; font-size: 0.9rem; color: var(--global-text-color-light); } .clip figcaption strong { color: var(--global-text-color); font-weight: 500; } .story img { width: 100%; border-radius: 6px; } .refs li { margin-bottom: 0.4rem; }
+
+  </style> <div class="post"> <header class="post-header"> <h1 class="post-title">Pulling a molecular ring open</h1> <p class="post-description">Quantum-chemistry simulations of a strained carbon ring torn open by force, and of what it does when the force lets go.</p> </header> <article> <p>Most chemical reactions are started with heat or light. Mechanochemistry uses force instead. When a long polymer chain is stretched hard, for example by the collapsing bubbles of ultrasound in a polymer solution, the pull concentrates on the bonds along its backbone, and a small, strained ring built into that backbone can be torn open.</p> <p>The ring studied here is gem-difluorocyclopropane (gDFC): a triangle of three carbon atoms with two fluorine atoms on one corner. In 2010, Lenhardt and coworkers built these rings into polybutadiene and showed that pulling on the polymer opens them into a 1,3-diradical, a molecule with two unpaired electrons. Normally this structure is the transition state of the ring’s isomerization and lasts for a single molecular vibration, but the pull holds it open: the transition state is trapped by tension <a href="#ref-1">[1]</a>. In 2015, Wang and coworkers asked what the ring does once the force is released <a href="#ref-2">[2]</a>. The simulations below follow both steps atom by atom, with the electrons treated by quantum mechanics.</p> <figure class="story"> <img class="only-light" data-zoomable="" src="/assets/img/gdfc/story_light.jpg" alt="A gem-difluorocyclopropane ring is pulled open into a diradical. When the force is released, its two ends almost always twist in opposite directions and the ring closes back into its starting form. Rarely, both ends twist the same way and one orange hydrogen ends up flipped over"> <img class="only-dark" data-zoomable="" src="/assets/img/gdfc/story_dark.jpg" alt="A gem-difluorocyclopropane ring is pulled open into a diradical. When the force is released, its two ends almost always twist in opposite directions and the ring closes back into its starting form. Rarely, both ends twist the same way and one orange hydrogen ends up flipped over"> </figure> <h2 id="why-the-fluorines-matter">Why the fluorines matter</h2> <p>A three-membered ring is already strained: its bond angles are squeezed to 60°, far from the roughly 109° that carbon prefers. Two fluorine atoms on one corner add more strain and weaken the carbon–carbon bond on the opposite side of the triangle <a href="#ref-1">[1]</a>. That bond, the one that breaks in the movies, gives way much more easily than a bond in plain cyclopropane, so a moderate pull opens the ring without tearing the rest of the molecule apart.</p> <h2 id="how-the-movies-are-made">How the movies are made</h2> <p>Breaking a bond leaves two electrons that no longer pair up, and standard density functional theory describes that poorly. The simulations therefore use a multireference method: CASSCF with second-order perturbation corrections (CASPT2), with two electrons in the two orbitals of the breaking bond and the 6-31G* basis set, in OpenMolcas. In ab initio molecular dynamics, the atoms move by Newton’s laws while the forces on them come from this quantum calculation, repeated every 0.25 to 0.5 femtoseconds. Each run starts from positions and velocities sampled from the molecule’s quantum vibrational (Wigner) distribution at 280 K. The polymer chain on either side of the ring is replaced by a constant pulling force on the two hydrogens where the chain would attach, drawn in orange in the movies. For the ring-closing runs, the force is switched off.</p> <p>In each movie:</p> <ul> <li> <strong>Left chart:</strong> the length of the breaking bond. An intact carbon–carbon bond is about 1.5 Å long.</li> <li> <strong>Right chart:</strong> how that bond’s two electrons are shared between its bonding and antibonding orbitals. An intact bond keeps both in the bonding orbital (about 2 and 0). As the bond breaks, the electrons split up, one in each orbital (about 1 and 1): the diradical.</li> <li> <strong>The stick for the breaking bond</strong> is drawn from those same numbers, so it thins and disappears as the bond breaks and grows back as it forms. A faint dotted line keeps showing the distance once the bond is gone.</li> <li> <strong>Time:</strong> one second of video is 30 femtoseconds (3 × 10⁻¹⁴ s) of the simulation.</li> <li> <strong>Motion:</strong> the atom positions are smoothed over a few femtoseconds to calm the fastest hydrogen vibrations, so the slower twisting is easier to follow. The charts show the unsmoothed data.</li> </ul> <h2 id="pulling-the-ring-open">Pulling the ring open</h2> <figure class="clip"> <video data-light="/assets/video/gdfc/open_cis_light.mp4" data-dark="/assets/video/gdfc/open_cis_dark.mp4" data-poster-light="/assets/img/gdfc/open_cis_light.jpg" data-poster-dark="/assets/img/gdfc/open_cis_dark.jpg" muted="" loop="" playsinline="" controls="" preload="none" aria-label="Ab initio dynamics of gem-difluorocyclopropane pulled at 2 nN on two hydrogens: the bond breaks and its two ends twist in opposite directions"></video> <figcaption><strong>Pulled open, 2 nN on each orange hydrogen.</strong> The two ends of the breaking bond twist in opposite directions as the ring opens.</figcaption> </figure> <p>Pulling the two orange hydrogens apart stretches the bond opposite the fluorine corner until it breaks, here after about 190 femtoseconds. As it gives way, the two ends of the bond, each a carbon carrying two hydrogens, twist in opposite directions, one clockwise and one counterclockwise (a disrotatory opening). With the force on, the open diradical stays open: the pull has turned a fleeting transition state into a stable structure.</p> <h2 id="letting-go">Letting go</h2> <p>In the experiment the force lasts only as long as a bubble collapse. Once it is gone, the diradical is a transition state again, and the ring snaps shut, usually within about 100 femtoseconds.</p> <figure class="clip"> <video data-light="/assets/video/gdfc/close_dis_light.mp4" data-dark="/assets/video/gdfc/close_dis_dark.mp4" data-poster-light="/assets/img/gdfc/close_dis_light.jpg" data-poster-dark="/assets/img/gdfc/close_dis_dark.jpg" muted="" loop="" playsinline="" controls="" preload="none" aria-label="Ab initio dynamics after the force is released: the two ends twist in opposite directions and the ring closes back into its starting form"></video> <figcaption><strong>Force released: the usual closing.</strong> The two ends twist in opposite directions, and the ring closes back into its starting form.</figcaption> </figure> <p>By far the more likely outcome is that the two ends twist in opposite directions again (disrotatory), and the ring closes back into the form it started from.</p> <figure class="clip"> <video data-light="/assets/video/gdfc/close_con_light.mp4" data-dark="/assets/video/gdfc/close_con_dark.mp4" data-poster-light="/assets/img/gdfc/close_con_light.jpg" data-poster-dark="/assets/img/gdfc/close_con_dark.jpg" muted="" loop="" playsinline="" controls="" preload="none" aria-label="Ab initio dynamics after the force is released: the diradical lingers, then both ends twist the same way as the ring closes, leaving one orange hydrogen flipped over"></video> <figcaption><strong>Force released: the rare closing.</strong> Both ends twist the same way, and the ring closes with one orange hydrogen flipped over.</figcaption> </figure> <p>Much less often, both ends twist the same way (conrotatory), and the ring closes into a slightly different form, with one orange hydrogen flipped over. In this run the diradical lingers for about 200 femtoseconds before it finds that exit.</p> <h2 id="why-it-matters">Why it matters</h2> <p>Transition states decide how fast a reaction runs and which products it makes, but they normally last about 10⁻¹³ s, far too short to study directly. Tension trapping holds one in place, and these simulations show, femtosecond by femtosecond, how a held transition state falls apart once it is let go.</p> <h2 id="references">References</h2> <ol class="refs"> <li id="ref-1">J. M. Lenhardt, M. T. Ong, R. Choe, C. R. Evenhuis, T. J. Martinez, S. L. Craig. Trapping a diradical transition state by mechanochemical polymer extension. <em>Science</em> <strong>329</strong>, 1057–1060 (2010). <a href="https://doi.org/10.1126/science.1193412" target="_blank" rel="noopener">doi:10.1126/science.1193412</a> </li> <li id="ref-2">J. Wang, M. T. Ong, T. B. Kouznetsova, J. M. Lenhardt, T. J. Martínez, S. L. Craig. Catch and release: orbital symmetry guided reaction dynamics from a freed "tension trapped transition state". <em>J. Org. Chem.</em> <strong>80</strong>, 11773–11778 (2015). <a href="https://doi.org/10.1021/acs.joc.5b01493" target="_blank" rel="noopener">doi:10.1021/acs.joc.5b01493</a> </li> </ol> <script>
+  (function () {
+    // Videos with data-light / data-dark sources: load the one that matches the site theme, only when
+    // the video scrolls into view, and swap it when the theme toggle changes.
+    var videos = [].slice.call(document.querySelectorAll("video[data-light]"));
+    function theme() {
+      return document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light";
+    }
+    function setPoster(v) {
+      var p = theme() === "dark" ? v.dataset.posterDark : v.dataset.posterLight;
+      if (p) v.poster = p;
+    }
+    function load(v) {
+      var t = theme();
+      if (v.dataset.shown === t) return;
+      v.dataset.shown = t;
+      setPoster(v);
+      v.src = t === "dark" ? v.dataset.dark : v.dataset.light;
+      if (v.dataset.visible === "1") v.play().catch(function () {});
+    }
+    videos.forEach(setPoster);
+    if ("IntersectionObserver" in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          var v = e.target;
+          v.dataset.visible = e.isIntersecting ? "1" : "0";
+          if (e.isIntersecting) {
+            load(v);
+            v.play().catch(function () {});
+          } else if (!v.paused) {
+            v.pause();
+          }
+        });
+      }, { rootMargin: "150px 0px", threshold: 0.25 });
+      videos.forEach(function (v) { io.observe(v); });
+    } else {
+      videos.forEach(function (v) { v.dataset.visible = "1"; load(v); });
+    }
+    new MutationObserver(function () {
+      videos.forEach(function (v) {
+        if (v.dataset.shown) load(v); else setPoster(v);
+      });
+    }).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+  })();
+</script> </article> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Javad Tamnanloo. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. Last updated: November 23, 2026. </div> </footer> <script>
+  window.alFolio = {
+    compatBootstrap: false
+  };
+</script> <script src="/assets/js/nav-toggle.js?v=141bd79a73ebc0f0b6ea58e440ae79fc"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/assets/js/masonry.js?v=e49affc7bd2646f6acdad1dbe02c2359" type="text/javascript"></script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script> <script src="/assets/al_math/js/mathjax-setup.js"></script> <script src="/assets/js/tooltips-setup.js?v=fe487e99db6c43751e6e7bdb2d6a0611"></script> <script src="/assets/js/no_defer.js?v=53b1b1a645525975c963ce8bf8bfefcf"></script> <script defer src="/assets/js/common.js?v=87baac90f765f2f3362dcf6aaf312a8a"></script> <script defer src="/assets/js/copy_code.js?v=c8a01c11a92744d44b093fc3bda915df" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js?v=896d254890d9b47f0281f63bfccf0dee"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/al_img_tools/js/zoom.js"></script> <script defer src="/assets/js/progress-bar.js?v=499464c5c63ced6cf7ad62509f1e2610" type="text/javascript"></script> <script src="https://cdn.jsdelivr.net/npm/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js" integrity="sha256-uMJJ3EoTyfRBoTbR+lrfu1uRQ87RZG8AR3cVNuQVeFg=" crossorigin="anonymous"></script> <script>
+    addBackToTop();
+  </script> <script type="module" src="/assets/al_search/js/search/ninja-keys.min.js"></script> <ninja-keys hidebreadcrumbs noautoloadmdicons placeholder="Type to start searching"></ninja-keys> <script src="/assets/al_search/js/search-setup.js"></script> <script>
+// get the ninja-keys element
+const ninja = document.querySelector('ninja-keys');
+
+// add the home and posts menu items
+ninja.data = [{
+    id: "nav-about",
+    title: "about",
+    section: "Navigation",
+    handler: () => {
+      window.location.href = "/";
+    },
+  },{id: "nav-research",
+          title: "research",
+          description: "My work, grouped by the methods behind it.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/research/";
+          },
+        },{id: "nav-publications",
+          title: "publications",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/publications/";
+          },
+        },{id: "nav-predictor",
+          title: "predictor",
+          description: "Room-temperature surface tension of a polymer or a liquid from a single structure.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/predictor/";
+          },
+        },{id: "nav-cv",
+          title: "CV",
+          description: "Education, experience, and honors.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/cv/";
+          },
+        },{id: "projects-polymer-outreach",
+          title: 'Polymer outreach',
+          description: "Showing students how polymer chains stretch, tangle, and snap, with simulations and hands-on experiments.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/1_polymer_outreach/";
+            },},{id: "projects-polymer-chains-built-to-respond-to-force",
+          title: 'Polymer chains built to respond to force',
+          description: "Molecular dynamics of three mechanophore-bearing polymers shows how stiff or flexible backbones shape the chains, alongside experiments on how the polymers respond to force.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/md_mechanophore_polymers/";
+            },},{id: "projects-solvent-moving-through-polystyrene-films",
+          title: 'Solvent moving through polystyrene films',
+          description: "Analysis of all-atom simulations, each longer than half a microsecond, of how a solvent enters glassy and molten polystyrene films.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/md_solvent_diffusion/";
+            },},{id: "projects-graph-neural-networks-for-surface-tension",
+          title: 'Graph neural networks for surface tension',
+          description: "Why surface tension matters, why it is hard to measure, and how a graph neural network that also learns from liquids predicts it for polymers.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/ml_gnn_surface_tension/";
+            },},{id: "projects-a-neural-network-in-place-of-a-process-simulator",
+          title: 'A neural network in place of a process simulator',
+          description: "A deep neural network trained on a million process-simulator runs stands in for the simulator, so a natural-gas liquefaction cycle can be optimized in minutes instead of a day.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/ml_process_surrogate/";
+            },},{id: "projects-pulling-a-molecular-ring-open",
+          title: 'Pulling a molecular ring open',
+          description: "Quantum-chemistry simulations of a strained carbon ring torn open by force, and of what it does when the force lets go.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/pulling_a_ring_open/";
+            },},{id: "projects-separating-nitrogen-from-natural-gas-in-a-zeolite",
+          title: 'Separating nitrogen from natural gas in a zeolite',
+          description: "A DFT and molecular dynamics study, with measured isotherms, of why nitrogen and methane move so differently through the pores of a sodium zeolite.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/qc_zeolite_separation/";
+            },},{
+        id: 'social-email',
+        title: 'email',
+        section: 'Socials',
+        handler: () => {
+          window.open("mailto:%6A%61%76.%74%61%6D%6E%61%6E%6C%6F%6F@%67%6D%61%69%6C.%63%6F%6D", "_blank");
+        },
+      },{
+        id: 'social-linkedin',
+        title: 'LinkedIn',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://www.linkedin.com/in/javtamnanloo", "_blank");
+        },
+      },{
+        id: 'social-scholar',
+        title: 'Google Scholar',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://scholar.google.com/citations?user=OTb5E1cAAAAJ", "_blank");
+        },
+      },{
+        id: 'social-github',
+        title: 'GitHub',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://github.com/javtamnanloo", "_blank");
+        },
+      },{
+      id: 'light-theme',
+      title: 'Change theme to light',
+      description: 'Change the theme of the site to Light',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("light");
+      },
+    },
+    {
+      id: 'dark-theme',
+      title: 'Change theme to dark',
+      description: 'Change the theme of the site to Dark',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("dark");
+      },
+    },
+    {
+      id: 'system-theme',
+      title: 'Use system default theme',
+      description: 'Change the theme of the site to System Default',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("system");
+      },
+    },];
+
+</script> <script src="/assets/al_search/js/shortcut-key.js"></script> <script defer src="/assets/al_email_protect/js/email-protect.js"></script> </body> </html>
