@@ -1,0 +1,112 @@
+<svg viewBox="0 0 480 272" class="gst-svg gst-surface" role="img" aria-label="Molecules at a surface have neighbors only below and beside them, so they feel a net pull into the material, while molecules inside are pulled equally in every direction" preserveAspectRatio="xMidYMid meet">
+<defs><marker id="gst-ar-ink" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9 z" class="g-ar-ink"/></marker><marker id="gst-ar-net" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9 z" class="g-ar-net"/></marker></defs>
+<rect x="0" y="84" width="480" height="188" class="g-tint"/>
+<line x1="0" y1="84" x2="480" y2="84" class="g-interface"/>
+<clipPath id="gst-clip-mat"><rect x="0" y="84" width="480" height="188"/></clipPath>
+<g clip-path="url(#gst-clip-mat)">
+<circle cx="6" cy="102" r="15.0" class="g-mol"/>
+<circle cx="42" cy="102" r="15.0" class="g-mol"/>
+<circle cx="78" cy="102" r="15.0" class="g-mol"/>
+<circle cx="114" cy="102" r="15.0" class="g-mol-hl"/>
+<circle cx="150" cy="102" r="15.0" class="g-mol"/>
+<circle cx="186" cy="102" r="15.0" class="g-mol"/>
+<circle cx="222" cy="102" r="15.0" class="g-mol"/>
+<circle cx="258" cy="102" r="15.0" class="g-mol"/>
+<circle cx="294" cy="102" r="15.0" class="g-mol"/>
+<circle cx="330" cy="102" r="15.0" class="g-mol"/>
+<circle cx="366" cy="102" r="15.0" class="g-mol"/>
+<circle cx="402" cy="102" r="15.0" class="g-mol"/>
+<circle cx="438" cy="102" r="15.0" class="g-mol"/>
+<circle cx="474" cy="102" r="15.0" class="g-mol"/>
+<circle cx="24" cy="133.2" r="15.0" class="g-mol"/>
+<circle cx="60" cy="133.2" r="15.0" class="g-mol"/>
+<circle cx="96" cy="133.2" r="15.0" class="g-mol"/>
+<circle cx="132" cy="133.2" r="15.0" class="g-mol"/>
+<circle cx="168" cy="133.2" r="15.0" class="g-mol"/>
+<circle cx="204" cy="133.2" r="15.0" class="g-mol"/>
+<circle cx="240" cy="133.2" r="15.0" class="g-mol"/>
+<circle cx="276" cy="133.2" r="15.0" class="g-mol"/>
+<circle cx="312" cy="133.2" r="15.0" class="g-mol"/>
+<circle cx="348" cy="133.2" r="15.0" class="g-mol"/>
+<circle cx="384" cy="133.2" r="15.0" class="g-mol"/>
+<circle cx="420" cy="133.2" r="15.0" class="g-mol"/>
+<circle cx="456" cy="133.2" r="15.0" class="g-mol"/>
+<circle cx="492" cy="133.2" r="15.0" class="g-mol"/>
+<circle cx="6" cy="164.4" r="15.0" class="g-mol"/>
+<circle cx="42" cy="164.4" r="15.0" class="g-mol"/>
+<circle cx="78" cy="164.4" r="15.0" class="g-mol"/>
+<circle cx="114" cy="164.4" r="15.0" class="g-mol"/>
+<circle cx="150" cy="164.4" r="15.0" class="g-mol"/>
+<circle cx="186" cy="164.4" r="15.0" class="g-mol"/>
+<circle cx="222" cy="164.4" r="15.0" class="g-mol"/>
+<circle cx="258" cy="164.4" r="15.0" class="g-mol"/>
+<circle cx="294" cy="164.4" r="15.0" class="g-mol"/>
+<circle cx="330" cy="164.4" r="15.0" class="g-mol"/>
+<circle cx="366" cy="164.4" r="15.0" class="g-mol"/>
+<circle cx="402" cy="164.4" r="15.0" class="g-mol"/>
+<circle cx="438" cy="164.4" r="15.0" class="g-mol"/>
+<circle cx="474" cy="164.4" r="15.0" class="g-mol"/>
+<circle cx="24" cy="195.5" r="15.0" class="g-mol"/>
+<circle cx="60" cy="195.5" r="15.0" class="g-mol"/>
+<circle cx="96" cy="195.5" r="15.0" class="g-mol"/>
+<circle cx="132" cy="195.5" r="15.0" class="g-mol"/>
+<circle cx="168" cy="195.5" r="15.0" class="g-mol"/>
+<circle cx="204" cy="195.5" r="15.0" class="g-mol"/>
+<circle cx="240" cy="195.5" r="15.0" class="g-mol"/>
+<circle cx="276" cy="195.5" r="15.0" class="g-mol"/>
+<circle cx="312" cy="195.5" r="15.0" class="g-mol"/>
+<circle cx="348" cy="195.5" r="15.0" class="g-mol"/>
+<circle cx="384" cy="195.5" r="15.0" class="g-mol"/>
+<circle cx="420" cy="195.5" r="15.0" class="g-mol"/>
+<circle cx="456" cy="195.5" r="15.0" class="g-mol"/>
+<circle cx="492" cy="195.5" r="15.0" class="g-mol"/>
+<circle cx="6" cy="226.7" r="15.0" class="g-mol"/>
+<circle cx="42" cy="226.7" r="15.0" class="g-mol"/>
+<circle cx="78" cy="226.7" r="15.0" class="g-mol"/>
+<circle cx="114" cy="226.7" r="15.0" class="g-mol"/>
+<circle cx="150" cy="226.7" r="15.0" class="g-mol"/>
+<circle cx="186" cy="226.7" r="15.0" class="g-mol"/>
+<circle cx="222" cy="226.7" r="15.0" class="g-mol"/>
+<circle cx="258" cy="226.7" r="15.0" class="g-mol"/>
+<circle cx="294" cy="226.7" r="15.0" class="g-mol-hl"/>
+<circle cx="330" cy="226.7" r="15.0" class="g-mol"/>
+<circle cx="366" cy="226.7" r="15.0" class="g-mol"/>
+<circle cx="402" cy="226.7" r="15.0" class="g-mol"/>
+<circle cx="438" cy="226.7" r="15.0" class="g-mol"/>
+<circle cx="474" cy="226.7" r="15.0" class="g-mol"/>
+<circle cx="24" cy="257.9" r="15.0" class="g-mol"/>
+<circle cx="60" cy="257.9" r="15.0" class="g-mol"/>
+<circle cx="96" cy="257.9" r="15.0" class="g-mol"/>
+<circle cx="132" cy="257.9" r="15.0" class="g-mol"/>
+<circle cx="168" cy="257.9" r="15.0" class="g-mol"/>
+<circle cx="204" cy="257.9" r="15.0" class="g-mol"/>
+<circle cx="240" cy="257.9" r="15.0" class="g-mol"/>
+<circle cx="276" cy="257.9" r="15.0" class="g-mol"/>
+<circle cx="312" cy="257.9" r="15.0" class="g-mol"/>
+<circle cx="348" cy="257.9" r="15.0" class="g-mol"/>
+<circle cx="384" cy="257.9" r="15.0" class="g-mol"/>
+<circle cx="420" cy="257.9" r="15.0" class="g-mol"/>
+<circle cx="456" cy="257.9" r="15.0" class="g-mol"/>
+<circle cx="492" cy="257.9" r="15.0" class="g-mol"/>
+</g>
+<circle cx="96" cy="70.8" r="15.0" class="g-missing"/>
+<circle cx="132" cy="70.8" r="15.0" class="g-missing"/>
+<line x1="306" y1="226.7" x2="324" y2="226.7" class="g-force" marker-end="url(#gst-ar-ink)"/>
+<line x1="300" y1="237.1" x2="309" y2="252.7" class="g-force" marker-end="url(#gst-ar-ink)"/>
+<line x1="288" y1="237.1" x2="279" y2="252.7" class="g-force" marker-end="url(#gst-ar-ink)"/>
+<line x1="282" y1="226.7" x2="264" y2="226.7" class="g-force" marker-end="url(#gst-ar-ink)"/>
+<line x1="288" y1="216.3" x2="279" y2="200.7" class="g-force" marker-end="url(#gst-ar-ink)"/>
+<line x1="300" y1="216.3" x2="309" y2="200.7" class="g-force" marker-end="url(#gst-ar-ink)"/>
+<line x1="126" y1="102" x2="144" y2="102" class="g-force" marker-end="url(#gst-ar-ink)"/>
+<line x1="120" y1="112.4" x2="129" y2="128" class="g-force" marker-end="url(#gst-ar-ink)"/>
+<line x1="108" y1="112.4" x2="99" y2="128" class="g-force" marker-end="url(#gst-ar-ink)"/>
+<line x1="102" y1="102" x2="84" y2="102" class="g-force" marker-end="url(#gst-ar-ink)"/>
+<line x1="114" y1="106" x2="114" y2="166" class="g-net" marker-end="url(#gst-ar-net)"/>
+<text x="14" y="28" class="g-lab g-lab-muted" text-anchor="start">air</text>
+<text x="172" y="40" class="g-lab" text-anchor="start">at the surface:</text>
+<text x="172" y="60" class="g-lab g-lab-strong" text-anchor="start">pulled inward</text>
+<line x1="168" y1="48" x2="136" y2="80" class="g-leader"/>
+<rect x="344" y="192.7" width="112" height="46" rx="7" class="g-labbg"/>
+<text x="352" y="211.7" class="g-lab" text-anchor="start">inside:</text>
+<text x="352" y="231.7" class="g-lab g-lab-strong" text-anchor="start">balanced</text>
+</svg>

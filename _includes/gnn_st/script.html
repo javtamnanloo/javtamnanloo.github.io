@@ -1,0 +1,216 @@
+<script>
+  (function () {
+    var root = document.getElementById("gst-gnn");
+    if (!root) return;
+    var NS = "http://www.w3.org/2000/svg";
+    var svgs = [].slice.call(root.querySelectorAll("svg"));
+    var nodes = [].slice.call(root.querySelectorAll(".gn"));
+    var layers = [].slice.call(root.querySelectorAll(".g-pulses"));
+    var labels = [].slice.call(root.querySelectorAll(".g-round"));
+    var buttons = [].slice.call(root.querySelectorAll(".gst-step"));
+    var texts = [].slice.call(root.querySelectorAll(".gst-step-text"));
+    var play = root.querySelector(".gst-play");
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var DUR = [5, 6.2, 5.6, 6.5];
+    var ROUND = 1.6;
+    var pulses = [];
+    svgs.forEach(function (svg) {
+      var layer = svg.querySelector(".g-pulses");
+      [].slice.call(svg.querySelectorAll(".ge")).forEach(function (e) {
+        var d = e.dataset;
+        var a = [+d.x1, +d.y1, +d.x2, +d.y2];
+        [a, [a[2], a[3], a[0], a[1]]].forEach(function (p) {
+          var c = document.createElementNS(NS, "circle");
+          c.setAttribute("r", "3.6");
+          c.setAttribute("class", "g-pulse");
+          layer.appendChild(c);
+          pulses.push({ c: c, p: p });
+        });
+      });
+    });
+
+    function pulsesShown(on) {
+      layers.forEach(function (l) {
+        l.style.display = on ? "" : "none";
+      });
+    }
+
+    function say(text) {
+      labels.forEach(function (l) {
+        l.textContent = text;
+      });
+    }
+    var step = 0;
+    var start = performance.now();
+    var auto = !reduce;
+    var visible = false;
+    var raf = 0;
+
+    function setClass(name, test) {
+      nodes.forEach(function (g) {
+        g.classList.toggle(name, test(g));
+      });
+    }
+
+    function show(s, byUser) {
+      step = s;
+      start = performance.now();
+      if (byUser) auto = false;
+      root.setAttribute("data-step", String(s));
+      buttons.forEach(function (b, i) {
+        b.setAttribute("aria-pressed", i === s ? "true" : "false");
+      });
+      texts.forEach(function (p, i) {
+        p.hidden = i !== s;
+      });
+      play.hidden = auto;
+      setClass("got", function () { return false; });
+      setClass("reach", function () { return false; });
+      pulsesShown(false);
+      say("");
+      if (reduce) {
+        if (s === 1) {
+          say("messages travel along every bond");
+          setClass("got", function () { return true; });
+        }
+        if (s === 2) {
+          say("after three rounds");
+          setClass("reach", function (g) { return +g.dataset.hop <= 3; });
+        }
+      }
+      wake();
+    }
+
+    function ease(x) {
+      return x < 0.5 ? 2 * x * x : 1 - Math.pow(-2 * x + 2, 2) / 2;
+    }
+
+    function frame(now) {
+      raf = 0;
+      if (!visible) return;
+      var t = (now - start) / 1000;
+      if (!reduce && step === 1) {
+        var r = Math.floor(t / ROUND);
+        if (r < 3) {
+          var f = Math.min(1, (t - r * ROUND) / (ROUND * 0.62));
+          var e = ease(f);
+          pulsesShown(f < 1);
+          pulses.forEach(function (q) {
+            var p = q.p;
+            q.c.setAttribute("cx", (p[0] + (p[2] - p[0]) * e).toFixed(1));
+            q.c.setAttribute("cy", (p[1] + (p[3] - p[1]) * e).toFixed(1));
+          });
+          setClass("got", function () { return f >= 1; });
+          say("round " + (r + 1) + " of 3");
+        } else {
+          pulsesShown(false);
+          setClass("got", function () { return true; });
+        }
+      }
+      if (!reduce && step === 2) {
+        var k = t < 0.7 ? 0 : Math.min(3, 1 + Math.floor((t - 0.7) / 1.25));
+        setClass("reach", function (g) { return +g.dataset.hop <= k; });
+        say(k === 0 ? "one carbon atom" : "round " + k + " of 3: atoms up to " + k + (k === 1 ? " bond" : " bonds") + " away");
+      }
+      if (auto && t > DUR[step]) {
+        show((step + 1) % DUR.length, false);
+        return;
+      }
+      wake();
+    }
+
+    function wake() {
+      if (!raf && visible) raf = requestAnimationFrame(frame);
+    }
+
+    buttons.forEach(function (b, i) {
+      b.addEventListener("click", function () {
+        show(i, true);
+      });
+    });
+    play.addEventListener("click", function () {
+      auto = true;
+      show(0, false);
+    });
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          var was = visible;
+          visible = en.isIntersecting;
+          if (visible && !was) {
+            if (auto) show(step === 0 ? 0 : step, false);
+            wake();
+          }
+        });
+      }, { threshold: 0.35 }).observe(root);
+    } else {
+      visible = true;
+    }
+    show(0, false);
+  })();
+
+  (function () {
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    [].slice.call(document.querySelectorAll(".gst-stepper")).forEach(function (root) {
+      var items = [].slice.call(root.querySelectorAll("[data-show]"));
+      var buttons = [].slice.call(root.querySelectorAll(".gst-step"));
+      var again = root.querySelector(".gst-play");
+      var last = buttons.length;
+      var gap = +(root.getAttribute("data-gap") || 2000);
+      var timers = [];
+
+      function set(k) {
+        items.forEach(function (el) {
+          el.classList.toggle("on", +el.getAttribute("data-show") <= k);
+        });
+        buttons.forEach(function (b, i) {
+          b.setAttribute("aria-pressed", i + 1 === k ? "true" : "false");
+        });
+      }
+
+      function stop() {
+        timers.forEach(clearTimeout);
+        timers = [];
+      }
+
+      function play() {
+        stop();
+        again.hidden = true;
+        set(0);
+        for (var k = 1; k <= last; k++) {
+          (function (k) {
+            timers.push(setTimeout(function () {
+              set(k);
+              if (k === last) again.hidden = false;
+            }, 350 + (k - 1) * gap));
+          })(k);
+        }
+      }
+
+      buttons.forEach(function (b, i) {
+        b.addEventListener("click", function () {
+          stop();
+          set(i + 1);
+          again.hidden = false;
+        });
+      });
+      again.addEventListener("click", play);
+      root.classList.add("armed");
+      if (reduce || !("IntersectionObserver" in window)) {
+        set(last);
+        again.hidden = true;
+        return;
+      }
+      set(0);
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) {
+            io.disconnect();
+            play();
+          }
+        });
+      }, { threshold: 0.4 });
+      io.observe(root);
+    });
+  })();
+</script>

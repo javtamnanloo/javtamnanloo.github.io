@@ -1,0 +1,45 @@
+<script>
+  (function () {
+    // Videos with data-light / data-dark sources: load the one that matches the site theme, only when
+    // the video scrolls into view, and swap it when the theme toggle changes.
+    var videos = [].slice.call(document.querySelectorAll("video[data-light]"));
+    function theme() {
+      return document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light";
+    }
+    function setPoster(v) {
+      var p = theme() === "dark" ? v.dataset.posterDark : v.dataset.posterLight;
+      if (p) v.poster = p;
+    }
+    function load(v) {
+      var t = theme();
+      if (v.dataset.shown === t) return;
+      v.dataset.shown = t;
+      setPoster(v);
+      v.src = t === "dark" ? v.dataset.dark : v.dataset.light;
+      if (v.dataset.visible === "1") v.play().catch(function () {});
+    }
+    videos.forEach(setPoster);
+    if ("IntersectionObserver" in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          var v = e.target;
+          v.dataset.visible = e.isIntersecting ? "1" : "0";
+          if (e.isIntersecting) {
+            load(v);
+            v.play().catch(function () {});
+          } else if (!v.paused) {
+            v.pause();
+          }
+        });
+      }, { rootMargin: "150px 0px", threshold: 0.25 });
+      videos.forEach(function (v) { io.observe(v); });
+    } else {
+      videos.forEach(function (v) { v.dataset.visible = "1"; load(v); });
+    }
+    new MutationObserver(function () {
+      videos.forEach(function (v) {
+        if (v.dataset.shown) load(v); else setPoster(v);
+      });
+    }).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+  })();
+</script>

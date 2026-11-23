@@ -1,0 +1,24 @@
+<svg viewBox="0 0 360 210" class="gst-svg gst-in-poly" role="img" aria-label="The polyethylene glycol repeat unit, two carbons and an oxygen, drawn in square brackets with a subscript n, the usual way of showing a unit that repeats along a chain" preserveAspectRatio="xMidYMid meet">
+<g class="g-edges">
+<g class="ge"><line x1="22" y1="127.8" x2="101" y2="82.2"/></g>
+<g class="ge"><line x1="101" y1="82.2" x2="180" y2="127.8"/></g>
+<g class="ge"><line x1="180" y1="127.8" x2="259" y2="82.2"/></g>
+<g class="ge"><line x1="259" y1="82.2" x2="338" y2="127.8"/></g>
+<g class="ge"><line x1="101" y1="82.2" x2="70.5" y2="45.9"/></g>
+<g class="ge"><line x1="101" y1="82.2" x2="131.5" y2="45.9"/></g>
+<g class="ge"><line x1="180" y1="127.8" x2="210.5" y2="164.1"/></g>
+<g class="ge"><line x1="180" y1="127.8" x2="149.5" y2="164.1"/></g>
+</g>
+<path d="M62,28.4 L52,28.4 L52,181.6 L62,181.6" class="g-bracket"/>
+<path d="M273,28.4 L283,28.4 L283,181.6 L273,181.6" class="g-bracket"/>
+<text x="290" y="187.6" class="g-n" text-anchor="start">n</text>
+<g class="g-nodes">
+<g class="gn gn-C"><circle cx="101" cy="82.2" r="15" class="g-atom"/></g>
+<g class="gn gn-C"><circle cx="180" cy="127.8" r="15" class="g-atom"/></g>
+<g class="gn gn-O"><circle cx="259" cy="82.2" r="15" class="g-atom"/></g>
+<g class="gn gn-H"><circle cx="70.5" cy="45.9" r="9.5" class="g-atom"/></g>
+<g class="gn gn-H"><circle cx="131.5" cy="45.9" r="9.5" class="g-atom"/></g>
+<g class="gn gn-H"><circle cx="210.5" cy="164.1" r="9.5" class="g-atom"/></g>
+<g class="gn gn-H"><circle cx="149.5" cy="164.1" r="9.5" class="g-atom"/></g>
+</g>
+</svg>

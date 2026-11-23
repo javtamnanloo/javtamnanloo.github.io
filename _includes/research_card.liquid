@@ -1,0 +1,33 @@
+{%- assign href = project.url | relative_url -%}
+{%- assign external = false -%}
+{%- if project.redirect -%}
+  {%- if project.redirect contains '://' -%}
+    {%- assign href = project.redirect -%}
+    {%- assign external = true -%}
+  {%- else -%}
+    {%- assign href = project.redirect | relative_url -%}
+  {%- endif -%}
+{%- endif -%}
+<div class="col">
+  <div class="research-card">
+    <div class="card h-100 hoverable">
+      <div class="research-thumb{% if project.img_fit == 'cover' %} cover{% endif %}{% if project.img_dark %} themed{% endif %}{% unless project.img %} placeholder{% endunless %}">
+        {%- if project.img -%}
+          <img src="{{ project.img | relative_url }}" alt="" loading="lazy"{% if project.img_dark %} class="only-light"{% endif %}>
+          {%- if project.img_dark -%}
+            <img src="{{ project.img_dark | relative_url }}" alt="" loading="lazy" class="only-dark">
+          {%- endif -%}
+        {%- else -%}
+          <i class="research-icon {{ project.icon | default: 'fa-solid fa-atom' }}" aria-hidden="true"></i>
+        {%- endif -%}
+      </div>
+      <div class="card-body">
+        {%- if project.venue -%}
+          <div class="research-venue">{{ project.venue }}{% if external %} <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>{% endif %}</div>
+        {%- endif -%}
+        <h3 class="card-title"><a class="research-link" href="{{ href }}"{% if external %} target="_blank" rel="noopener"{% endif %}>{{ project.title }}</a></h3>
+        <p class="card-text">{{ project.description_html | default: project.description }}</p>
+      </div>
+    </div>
+  </div>
+</div>

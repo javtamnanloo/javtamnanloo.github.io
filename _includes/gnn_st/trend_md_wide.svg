@@ -1,0 +1,44 @@
+<svg viewBox="0 0 860 489" class="gst-svg gst-trend gst-wide" role="img" aria-label="Measured surface tension exists for polyethylene, polypropylene, and poly(1-butene) only. Molecular dynamics simulations of all six polymers show the surface tension dropping and then leveling off after about three carbons in the side chain" preserveAspectRatio="xMidYMid meet">
+<g data-show="1"><rect x="372" y="18" width="294" height="290" rx="6" class="g-band"/><text x="519" y="35" class="g-lab g-lab-muted" text-anchor="middle">no measurements</text></g>
+<line x1="78" y1="282.9" x2="666" y2="282.9" class="g-grid"/>
+<text x="70" y="287.4" class="g-tick" text-anchor="end">24</text>
+<line x1="78" y1="214.7" x2="666" y2="214.7" class="g-grid"/>
+<text x="70" y="219.2" class="g-tick" text-anchor="end">28</text>
+<line x1="78" y1="146.4" x2="666" y2="146.4" class="g-grid"/>
+<text x="70" y="150.9" class="g-tick" text-anchor="end">32</text>
+<line x1="78" y1="78.1" x2="666" y2="78.1" class="g-grid"/>
+<text x="70" y="82.6" class="g-tick" text-anchor="end">36</text>
+<text x="62" y="20" class="g-tick" text-anchor="start">mN/m</text>
+<line x1="78" y1="308" x2="666" y2="308" class="g-axis"/>
+<text x="92" y="326" class="g-tick" text-anchor="middle">0</text>
+<text x="204" y="326" class="g-tick" text-anchor="middle">1</text>
+<text x="316" y="326" class="g-tick" text-anchor="middle">2</text>
+<text x="428" y="326" class="g-tick" text-anchor="middle">3</text>
+<text x="540" y="326" class="g-tick" text-anchor="middle">4</text>
+<text x="652" y="326" class="g-tick" text-anchor="middle">5</text>
+<text x="372" y="346" class="g-axislab" text-anchor="middle">carbons in the side chain</text>
+<path d="M92,157.3 L204,180.9 L316,197.8 L428,214 L540,215.2 L652,215" pathLength="1" class="g-line s-md g-draw" data-show="2" style="transition-delay:0.00s"/>
+<circle cx="92" cy="157.3" r="4.6" class="g-mark s-md" data-show="2" style="transition-delay:0.10s"><title>polyethylene, MD simulation: 31.4 mN/m</title></circle>
+<circle cx="204" cy="180.9" r="4.6" class="g-mark s-md" data-show="2" style="transition-delay:0.32s"><title>polypropylene, MD simulation: 30.0 mN/m</title></circle>
+<circle cx="316" cy="197.8" r="4.6" class="g-mark s-md" data-show="2" style="transition-delay:0.54s"><title>poly(1-butene), MD simulation: 29.0 mN/m</title></circle>
+<circle cx="428" cy="214" r="4.6" class="g-mark s-md" data-show="2" style="transition-delay:0.76s"><title>poly(1-pentene), MD simulation: 28.0 mN/m</title></circle>
+<circle cx="540" cy="215.2" r="4.6" class="g-mark s-md" data-show="2" style="transition-delay:0.98s"><title>poly(1-hexene), MD simulation: 28.0 mN/m</title></circle>
+<circle cx="652" cy="215" r="4.6" class="g-mark s-md" data-show="2" style="transition-delay:1.20s"><title>poly(1-heptene), MD simulation: 28.0 mN/m</title></circle>
+<path d="M92,57 L99.5,64.5 L92,72 L84.5,64.5 z" class="g-mark s-exp" data-show="1" style="transition-delay:0.00s"><title>polyethylene, measured: 36.8 mN/m</title></path>
+<path d="M204,183.3 L211.5,190.8 L204,198.3 L196.5,190.8 z" class="g-mark s-exp" data-show="1" style="transition-delay:0.35s"><title>polypropylene, measured: 29.4 mN/m</title></path>
+<path d="M316,236.2 L323.5,243.7 L316,251.2 L308.5,243.7 z" class="g-mark s-exp" data-show="1" style="transition-delay:0.70s"><title>poly(1-butene), measured: 26.3 mN/m</title></path>
+<g data-show="1" style="transition-delay:0.9s"><text x="105" y="58.5" class="g-lab g-lab-strong g-txthalo" text-anchor="start">measured</text></g>
+<g data-show="2" style="transition-delay:1.3s"><path d="M428,203 L428,198 L652,198 L652,203" class="g-brace"/><text x="540" y="191" class="g-lab g-lab-strong g-txthalo" text-anchor="middle">levels off quickly</text><text x="674" y="219.7" class="g-lab g-lab-strong" text-anchor="start">MD simulation</text></g>
+<image href="{{ '/assets/img/gnn_st/alkene_0.png' | relative_url }}" x="52.4" y="360" width="79.2" height="42.8" class="g-sketch"/>
+<text x="92" y="479.4" class="g-tick" text-anchor="middle">polyethylene</text>
+<image href="{{ '/assets/img/gnn_st/alkene_1.png' | relative_url }}" x="164.4" y="360" width="79.2" height="57.2" class="g-sketch"/>
+<text x="204" y="479.4" class="g-tick" text-anchor="middle">polypropylene</text>
+<image href="{{ '/assets/img/gnn_st/alkene_2.png' | relative_url }}" x="273.7" y="360" width="84.6" height="67" class="g-sketch"/>
+<text x="316" y="479.4" class="g-tick" text-anchor="middle">poly(1-butene)</text>
+<image href="{{ '/assets/img/gnn_st/alkene_3.png' | relative_url }}" x="376.3" y="360" width="103.3" height="69.5" class="g-sketch"/>
+<text x="428" y="479.4" class="g-tick" text-anchor="middle">poly(1-pentene)</text>
+<image href="{{ '/assets/img/gnn_st/alkene_4.png' | relative_url }}" x="478.6" y="360" width="122.8" height="66.2" class="g-sketch"/>
+<text x="540" y="479.4" class="g-tick" text-anchor="middle">poly(1-hexene)</text>
+<image href="{{ '/assets/img/gnn_st/alkene_5.png' | relative_url }}" x="593.9" y="360" width="116.3" height="99.4" class="g-sketch"/>
+<text x="652" y="479.4" class="g-tick" text-anchor="middle">poly(1-heptene)</text>
+</svg>

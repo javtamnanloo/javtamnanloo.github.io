@@ -1,0 +1,157 @@
+{%- assign all_papers = site.data.collaborations.papers -%}
+<style>
+  .affil { margin: 2.2rem 0 0.5rem; }
+  .affil-group { position: relative; margin-bottom: 2rem; }
+  .affil-head { display: flex; align-items: baseline; gap: 0.8rem; margin-bottom: 0.9rem; }
+  .affil-head h2 { font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500; color: var(--global-text-color-light); margin: 0; border: 0; padding: 0; }
+  .affil-head h2::before, .affil-head h2::after { content: ""; display: inline-block; width: 2.2rem; height: 1px; background: var(--global-divider-color); vertical-align: middle; }
+  .affil-head h2::before { margin-right: 0.8rem; }
+  .affil-head h2::after { margin-left: 0.8rem; }
+  .affil-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.7rem; }
+  @media (min-width: 560px) { .affil-grid { grid-template-columns: repeat(3, 1fr); } }
+  @media (min-width: 768px) { .affil-group.organizations .affil-grid { grid-template-columns: repeat(6, 1fr); } .affil-group.tools .affil-grid { grid-template-columns: repeat(5, 1fr); } }
+  .affil-grid li { margin: 0; padding: 0; }
+  .affil-tile { width: 100%; height: 74px; display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.55rem 0.8rem; background: #fff; border: 1px solid var(--global-divider-color); border-radius: 0.8rem; cursor: pointer; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06); transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease, opacity 0.22s ease; }
+  :root[data-theme="dark"] .affil-tile { background: #f4f3ef; border-color: transparent; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5); }
+  .affil-tile img { max-width: 100%; max-height: 46px; width: auto; height: auto; object-fit: contain; filter: grayscale(0.55); opacity: 0.92; transition: filter 0.25s ease, opacity 0.25s ease; }
+  .affil-tile.has-label img { max-width: 34px; max-height: 34px; flex: none; }
+  .affil-tile .affil-label { font-size: 0.86rem; font-weight: 500; color: #2b2b2b; letter-spacing: 0.01em; }
+  .affil-tile:hover, .affil-tile.on, .affil-tile:focus-visible { transform: translateY(-3px); border-color: var(--global-theme-color); box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16); }
+  .affil-tile:hover img, .affil-tile.on img, .affil-tile:focus-visible img { filter: none; opacity: 1; }
+  .affil-tile:focus-visible { outline: 2px solid var(--global-theme-color); outline-offset: 2px; }
+  .affil-group.has-on .affil-tile:not(.on) { opacity: 0.7; }
+  .affil-pop { position: absolute; z-index: 20; width: min(560px, 100%); left: 0; top: 0; padding: 1rem 1.15rem 0.9rem; background: var(--global-card-bg-color, var(--global-bg-color)); color: var(--global-text-color); border: 1px solid var(--global-divider-color); border-radius: 0.8rem; box-shadow: 0 14px 34px rgba(0, 0, 0, 0.28); opacity: 0; visibility: hidden; transform: translateY(6px); transition: opacity 0.2s ease, transform 0.2s ease, visibility 0s linear 0.2s; }
+  .affil-pop.show { opacity: 1; visibility: visible; transform: none; transition-delay: 0s; }
+  .affil-pop::before { content: ""; position: absolute; left: 0; right: 0; top: -14px; height: 14px; }
+  .affil-pop::after { content: ""; position: absolute; top: -6px; left: var(--ax, 40px); width: 10px; height: 10px; margin-left: -5px; background: inherit; border-left: 1px solid var(--global-divider-color); border-top: 1px solid var(--global-divider-color); transform: rotate(45deg); }
+  .affil-name { font-size: 1.02rem; font-weight: 500; margin: 0 0 0.15rem; }
+  .affil-name a { color: inherit; }
+  .affil-name a:hover { color: var(--global-theme-color); text-decoration: none; }
+  .affil-name i { font-size: 0.68rem; margin-left: 0.35rem; opacity: 0.6; }
+  .affil-papers { list-style: none; margin: 0.55rem 0 0; padding: 0; }
+  .affil-papers li { margin: 0 0 0.6rem; padding: 0; line-height: 1.35; }
+  .affil-papers li:last-child { margin-bottom: 0; }
+  .affil-venue { display: block; font-size: 0.72rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--global-text-color-light); margin-bottom: 0.1rem; }
+  .affil-papers a { font-size: 0.92rem; }
+  .affil-papers span.t { font-size: 0.92rem; }
+  .affil-detail[hidden] { display: none; }
+  .affil-close { position: absolute; top: 0.45rem; right: 0.55rem; width: 1.8rem; height: 1.8rem; border: 0; background: none; color: var(--global-text-color-light); font-size: 1.3rem; line-height: 1; border-radius: 50%; cursor: pointer; }
+  .affil-close:hover, .affil-close:focus-visible { color: var(--global-theme-color); background: var(--global-divider-color); }
+</style>
+
+<div class="affil">
+  {%- assign sections = "organizations|tools" | split: "|" -%}
+  {%- for sec in sections -%}
+    {%- assign items = site.data.collaborations[sec] -%}
+    <div class="affil-group {{ sec }}" data-affil-group>
+      <div class="affil-head">
+        <h2>{% if sec == "organizations" %}Worked with{% else %}Tools I use{% endif %}</h2>
+      </div>
+      <ul class="affil-grid">
+        {%- for g in items -%}
+          {%- assign n = g.papers | size -%}
+          {%- if g.roles -%}{%- assign n = 0 -%}{%- endif -%}
+          <li>
+            <button type="button" class="affil-tile{% if g.label %} has-label{% endif %}" data-affil="{{ g.id }}" aria-controls="affil-pop-{{ sec }}" aria-expanded="false" aria-label="{{ g.name }}{% if n > 0 %}, {{ n }} paper{% if n != 1 %}s{% endif %}{% endif %}">
+              <img src="{{ '/assets/img/logos/' | append: g.logo | relative_url }}" alt="" loading="lazy" decoding="async">
+              {%- if g.label -%}<span class="affil-label">{{ g.label }}</span>{%- endif -%}
+            </button>
+          </li>
+        {%- endfor -%}
+      </ul>
+      <div class="affil-pop" id="affil-pop-{{ sec }}" role="region" aria-live="polite" aria-label="Papers"></div>
+      {%- for g in items -%}
+        <div class="affil-detail" data-for="{{ g.id }}" hidden>
+          <div class="affil-name"><a href="{{ g.url }}" target="_blank" rel="noopener">{{ g.name }}<i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
+          {%- if g.roles -%}
+            <ul class="affil-papers">
+              {%- for r in g.roles -%}
+                <li><span class="affil-venue">{{ r.dates }}</span><span class="t">{{ r.title }}</span></li>
+              {%- endfor -%}
+            </ul>
+          {%- endif -%}
+          {%- if g.papers.size > 0 -%}
+            <ul class="affil-papers">
+              {%- for p in all_papers -%}
+                {%- if g.papers contains p[0] -%}
+                  <li>
+                    <span class="affil-venue">{{ p[1].venue }}{% unless p[1].venue == "In preparation" %} · {{ p[1].year }}{% endunless %}</span>
+                    {%- if p[1].doi -%}
+                      <a href="https://doi.org/{{ p[1].doi }}" target="_blank" rel="noopener">{{ p[1].title }}</a>
+                    {%- else -%}
+                      <span class="t">{{ p[1].title }}</span>
+                    {%- endif -%}
+                  </li>
+                {%- endif -%}
+              {%- endfor -%}
+            </ul>
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  {%- endfor -%}
+</div>
+
+<script>
+  (function () {
+    document.querySelectorAll("[data-affil-group]").forEach(function (group) {
+      var pop = group.querySelector(".affil-pop");
+      var tiles = [].slice.call(group.querySelectorAll(".affil-tile"));
+      var active = null, pinned = null, timer = null;
+
+      function place(tile) {
+        var g = group.getBoundingClientRect(), t = tile.getBoundingClientRect();
+        var w = pop.offsetWidth;
+        var left = Math.max(0, Math.min(t.left - g.left + t.width / 2 - w / 2, g.width - w));
+        pop.style.left = left + "px";
+        pop.style.top = (t.bottom - g.top + 10) + "px";
+        pop.style.setProperty("--ax", (t.left - g.left + t.width / 2 - left) + "px");
+      }
+      function open(tile) {
+        clearTimeout(timer);
+        if (active === tile) return;
+        var d = group.querySelector('.affil-detail[data-for="' + tile.dataset.affil + '"]');
+        pop.innerHTML = '<button type="button" class="affil-close" aria-label="Close">&times;</button>' + d.innerHTML;
+        active = tile;
+        tiles.forEach(function (x) {
+          var on = x === tile;
+          x.classList.toggle("on", on);
+          x.setAttribute("aria-expanded", on ? "true" : "false");
+        });
+        group.classList.add("has-on");
+        place(tile);
+        pop.classList.add("show");
+      }
+      function close() {
+        clearTimeout(timer);
+        active = null; pinned = null;
+        tiles.forEach(function (x) { x.classList.remove("on"); x.setAttribute("aria-expanded", "false"); });
+        group.classList.remove("has-on");
+        pop.classList.remove("show");
+      }
+      function later() {
+        clearTimeout(timer);
+        timer = setTimeout(function () { if (!pinned) close(); }, 220);
+      }
+
+      tiles.forEach(function (tile) {
+        tile.addEventListener("pointerenter", function (e) { if (e.pointerType === "mouse") { pinned = null; open(tile); } });
+        tile.addEventListener("pointerleave", function (e) { if (e.pointerType === "mouse") later(); });
+        tile.addEventListener("focus", function () { open(tile); });
+        tile.addEventListener("click", function () {
+          if (pinned === tile) { close(); return; }
+          open(tile); pinned = tile;
+        });
+      });
+      pop.addEventListener("click", function (e) { if (e.target.closest(".affil-close")) close(); });
+      pop.addEventListener("pointerenter", function () { clearTimeout(timer); });
+      pop.addEventListener("pointerleave", function (e) { if (e.pointerType === "mouse") later(); });
+      document.addEventListener("pointerdown", function (e) {
+        if (active && !group.contains(e.target)) close();
+        else if (active && !pop.contains(e.target) && !e.target.closest(".affil-tile")) close();
+      });
+      document.addEventListener("keydown", function (e) { if (e.key === "Escape" && active) { var t = active; close(); t.blur(); } });
+      window.addEventListener("resize", function () { if (active) place(active); });
+    });
+  })();
+</script>

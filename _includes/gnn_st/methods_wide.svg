@@ -1,0 +1,52 @@
+<svg viewBox="0 0 860 236" class="gst-svg gst-methods gst-wide" role="img" aria-label="Average cross-validation error of four kinds of model, trained on one class alone or on polymers and liquids together. Only the graph neural network gets clearly better for polymers. For liquids every change is small" preserveAspectRatio="xMidYMid meet">
+<text x="2" y="22" class="g-paneltitle" text-anchor="start">Polymers</text>
+<line x1="148" y1="38" x2="148" y2="198" class="g-grid"/>
+<text x="148" y="216" class="g-tick" text-anchor="middle">1</text>
+<line x1="220.6" y1="38" x2="220.6" y2="198" class="g-grid"/>
+<text x="220.6" y="216" class="g-tick" text-anchor="middle">2</text>
+<line x1="293.1" y1="38" x2="293.1" y2="198" class="g-grid"/>
+<text x="293.1" y="216" class="g-tick" text-anchor="middle">3</text>
+<line x1="365.7" y1="38" x2="365.7" y2="198" class="g-grid"/>
+<text x="365.7" y="216" class="g-tick" text-anchor="middle">4</text>
+<line x1="142" y1="198" x2="402" y2="198" class="g-axis"/>
+<text x="275" y="236" class="g-axislab" text-anchor="middle">average error (mN/m), lower is better</text>
+<text x="2" y="62.5" class="g-lab" text-anchor="start">Linear regression</text>
+<circle cx="365.7" cy="58" r="6" class="g-both"><title>Linear regression, polymers, polymers and liquids together: 4.0 mN/m</title></circle>
+<circle cx="373" cy="58" r="6" class="g-alone"><title>Linear regression, polymers, trained alone: 4.1 mN/m</title></circle>
+<text x="2" y="100.5" class="g-lab" text-anchor="start">Random forest</text>
+<line x1="314.7" y1="96" x2="315.2" y2="96" class="g-dumb"/>
+<circle cx="322.2" cy="96" r="6" class="g-both"><title>Random forest, polymers, polymers and liquids together: 3.4 mN/m</title></circle>
+<circle cx="307.7" cy="96" r="6" class="g-alone"><title>Random forest, polymers, trained alone: 3.2 mN/m</title></circle>
+<text x="2" y="138.5" class="g-lab" text-anchor="start">Gaussian process</text>
+<circle cx="329.4" cy="134" r="6" class="g-both"><title>Gaussian process, polymers, polymers and liquids together: 3.5 mN/m</title></circle>
+<circle cx="329.4" cy="134" r="6" class="g-alone"><title>Gaussian process, polymers, trained alone: 3.5 mN/m</title></circle>
+<text x="2" y="176.5" class="g-lab g-lab-strong" text-anchor="start">Graph neural network</text>
+<line x1="307.9" y1="172" x2="263.9" y2="172" class="g-dumb"/>
+<circle cx="256.9" cy="172" r="6" class="g-both"><title>Graph neural network, polymers, polymers and liquids together: 2.5 mN/m</title></circle>
+<circle cx="314.9" cy="172" r="6" class="g-alone"><title>Graph neural network, polymers, trained alone: 3.3 mN/m</title></circle>
+<text x="442" y="22" class="g-paneltitle" text-anchor="start">Liquids</text>
+<line x1="588" y1="38" x2="588" y2="198" class="g-grid"/>
+<text x="588" y="216" class="g-tick" text-anchor="middle">1</text>
+<line x1="660.6" y1="38" x2="660.6" y2="198" class="g-grid"/>
+<text x="660.6" y="216" class="g-tick" text-anchor="middle">2</text>
+<line x1="733.1" y1="38" x2="733.1" y2="198" class="g-grid"/>
+<text x="733.1" y="216" class="g-tick" text-anchor="middle">3</text>
+<line x1="805.7" y1="38" x2="805.7" y2="198" class="g-grid"/>
+<text x="805.7" y="216" class="g-tick" text-anchor="middle">4</text>
+<line x1="582" y1="198" x2="842" y2="198" class="g-axis"/>
+<text x="715" y="236" class="g-axislab" text-anchor="middle">average error (mN/m), lower is better</text>
+<text x="442" y="62.5" class="g-lab" text-anchor="start">Linear regression</text>
+<circle cx="762.2" cy="58" r="6" class="g-both"><title>Linear regression, liquids, polymers and liquids together: 3.4 mN/m</title></circle>
+<circle cx="754.9" cy="58" r="6" class="g-alone"><title>Linear regression, liquids, trained alone: 3.3 mN/m</title></circle>
+<text x="442" y="100.5" class="g-lab" text-anchor="start">Random forest</text>
+<line x1="660.3" y1="96" x2="675.3" y2="96" class="g-dumb"/>
+<circle cx="682.3" cy="96" r="6" class="g-both"><title>Random forest, liquids, polymers and liquids together: 2.3 mN/m</title></circle>
+<circle cx="653.3" cy="96" r="6" class="g-alone"><title>Random forest, liquids, trained alone: 1.9 mN/m</title></circle>
+<text x="442" y="138.5" class="g-lab" text-anchor="start">Gaussian process</text>
+<circle cx="653.3" cy="134" r="6" class="g-both"><title>Gaussian process, liquids, polymers and liquids together: 1.9 mN/m</title></circle>
+<circle cx="646.1" cy="134" r="6" class="g-alone"><title>Gaussian process, liquids, trained alone: 1.8 mN/m</title></circle>
+<text x="442" y="176.5" class="g-lab g-lab-strong" text-anchor="start">Graph neural network</text>
+<line x1="639.1" y1="172" x2="638.5" y2="172" class="g-dumb"/>
+<circle cx="631.5" cy="172" r="6" class="g-both"><title>Graph neural network, liquids, polymers and liquids together: 1.6 mN/m</title></circle>
+<circle cx="646.1" cy="172" r="6" class="g-alone"><title>Graph neural network, liquids, trained alone: 1.8 mN/m</title></circle>
+</svg>
